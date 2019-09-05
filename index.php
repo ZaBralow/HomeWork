@@ -53,17 +53,17 @@ abstract class Robot {
 
     class order_1 extends Robot {
     
-    function build() {
+    public function build() {
     echo "build one camp";
     echo "<br>";
     }
     
-    function explore() {
+    public function explore() {
     echo "explore one cave";
     echo "<br>";
     }
     
-    function dominate() {
+    public function dominate() {
     echo "destroy nest of wolf's";
     echo "<br>";
     }
@@ -72,17 +72,17 @@ abstract class Robot {
     
     class order_2 extends Robot {
     
-    function build() {
+    public function build() {
     echo "build some traps";
     echo "<br>";
     }
     
-    function explore() {
+    public function explore() {
     echo "explore ruined castle";
     echo "<br>";
     }
     
-    function dominate() {
+    public function dominate() {
     echo "destroy all living object in castle";
     echo "<br>";
     }
@@ -91,17 +91,17 @@ abstract class Robot {
     
     class order_3 extends Robot {
     
-    function build() {
+    public function build() {
     echo "build four fortifications";
     echo "<br>";
     }
     
-    function explore() {
+    public function explore() {
     echo "explore neighborhood of castle";
     echo "<br>";
     }
     
-    function dominate() {
+    public function dominate() {
     echo "keep out living object to castle";
     echo "<br>";
     }
