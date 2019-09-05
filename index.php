@@ -50,6 +50,8 @@ abstract class Robot {
 }
     
 
+echo "<br>";
+
 
     class order_1 extends Robot {
     
@@ -109,14 +111,16 @@ abstract class Robot {
     }
     
     $command_1 = new order_1();
-    $command_2 = new order_2();
-    $command_3 = new order_3();
-    
     $command_1->functional();
     echo "<br>";
+    $command_2 = new order_2();
     $command_2->functional();
     echo "<br>";
+    $command_3 = new order_3();
     $command_3->functional();
+    
+  
+    
 
 
 ?>
