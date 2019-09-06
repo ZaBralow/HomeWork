@@ -36,95 +36,77 @@ print LootBox::Height;
 echo "<br>";
 print LootBox::Color;
 echo "<br>";
+echo "<br>";
+echo "<br>";
 
-abstract class Robot {
-    abstract protected function build();
-    abstract protected function explore();
-    abstract protected function dominate();
-    
-    function functional() {
-    $this->build();
-    $this->explore();
-    $this->dominate();
-    }
+?>
+<?php
+
+abstract class AbstractClass {
+
+    /* Данный метод должен быть определён в дочернем классе */
+    abstract protected function first();
+    abstract protected function second();
+    abstract protected function third();
 }
-    
+
+class Class1 extends AbstractClass {
+
+  public function first() {
+      return "test1";
+    }
+    public function second() {
+      return "test2";
+    }
+    public function third() {
+      return "test3";
+    }
+
+}
+
+class Class2 extends AbstractClass {
+
+  public function first() {
+    return "test1";
+  }
+  public function second() {
+    return "test2";
+  }
+  public function third() {
+    return "test3";
+  }
+
+}
+
+class Class3 extends AbstractClass {
+
+  public function first() {
+    return "test1";
+  }
+  public function second() {
+    return "test2";
+  }
+  public function third() {
+    return "test3";
+  }
+
+}
+
+
+
+$Class1 = new Class1;
+echo $Class1->first();
 
 echo "<br>";
 
+$Class2 = new Class2;
+echo $Class2->second();
 
-    class order_1 extends Robot {
-    
-    public function build() {
-    echo "build one camp";
-    echo "<br>";
-    }
-    
-    public function explore() {
-    echo "explore one cave";
-    echo "<br>";
-    }
-    
-    public function dominate() {
-    echo "destroy nest of wolf's";
-    echo "<br>";
-    }
-    
-    }
-    
-    class order_2 extends Robot {
-    
-    public function build() {
-    echo "build some traps";
-    echo "<br>";
-    }
-    
-    public function explore() {
-    echo "explore ruined castle";
-    echo "<br>";
-    }
-    
-    public function dominate() {
-    echo "destroy all living object in castle";
-    echo "<br>";
-    }
-    
-    }
-    
-    class order_3 extends Robot {
-    
-    public function build() {
-    echo "build four fortifications";
-    echo "<br>";
-    }
-    
-    public function explore() {
-    echo "explore neighborhood of castle";
-    echo "<br>";
-    }
-    
-    public function dominate() {
-    echo "keep out living object to castle";
-    echo "<br>";
-    }
-    
-    }
-    
-    $command_1 = new order_1();
-    $command_1->functional();
-    echo "<br>";
-    $command_2 = new order_2();
-    $command_2->functional();
-    echo "<br>";
-    $command_3 = new order_3();
-    $command_3->functional();
-    
-  
-    
+echo "<br>";
 
-
+$Class3 = new Class3;
+echo $Class3->third();
 ?>
-
 
 
 
