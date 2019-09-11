@@ -42,15 +42,15 @@ echo "<br>";
 ?>
 <?php
 
-abstract class AbstractClass {
+abstract class AbstractClass {     //Создание класса
 
-    /* Данный метод должен быть определён в дочернем классе */
-    abstract protected function first();
+    
+    abstract protected function first();     //Создание абстрактных функций(методов)
     abstract protected function second();
     abstract protected function third();
 }
 
-class Class1 extends AbstractClass {
+class Class1 extends AbstractClass {     
 
   public function first() {
       return "test1";
@@ -108,7 +108,33 @@ $Class3 = new Class3;
 echo $Class3->third();
 ?>
 
+<?php
 
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+class easyClass                                  // Создание класса
+{
+	private $secret;                               // Создание приватной переменной
+	
+	function getset($inout=0,$str='str')           // Создание функции
+	{
+		if ($inout==0) {
+			return $this->secret=0;                    // Возвращение значение переменной равной 0
+		}else{
+			return return $this->secret = $inout;      // Ошибка
+		}
+	}
+}
+$des = new easyClass;                            // Создание экземпляра класса
+echo $des->getset();                             // Вывод
+echo '</br>';
+echo $des->getset(25);
+echo '</br>';
+echo $des->getset(77,'stop');
+
+?>
 
 </body>
 </html>
