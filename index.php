@@ -140,45 +140,80 @@
 <?php
 
 abstract class heroes {     
-  abstract public function Warrior($height, $weight, $agility, $strong);    
-  abstract public function Fighter($height, $weight, $strong);
-  abstract public function Wizard($height, $weight, $magic, $magicpower);
+  abstract public function Warrior($height, $weight, $agility);    
+  abstract public function Fighter($height, $weight);
+  abstract public function Wizard($height, $weight, $magic);
+
+
+  
 }
+
+
 
 class characters extends heroes {     
 
-public function Warrior($height, $weight, $agility, $strong) {
+  public $warriorheight;
+  public $warriorweight;
+  public $warrioragility;
+  public $warriorstrong;
+
+  public $fighterheight;
+  public $fighterweight;
+  public $fighterastrong;
+  
+
+  public $wizardheight;
+  public $wizardweight;
+  public $wizardmagic;
+  public $wizardmagicpower;
+
+
+public function Warrior($height, $weight, $agility) {
+    $this->warriorheight=$height;
+    $this->warriorweight=$weight;
+    $this->warrioragility=$agility;
+    $this->warriorstrong=$this->warriorheight+$this->warriorweight;
+
     echo "Характеристики Богатыря:";
     echo '<br>';
-    echo "Рост - " . $height;
+    echo "Рост - " . $this->warriorheight;
     echo '<br>';
-    echo "Вес - " . $weight;
+    echo "Вес - " . $this->warriorweight;
     echo '<br>';
-    echo "Ловкость - " . $agility;
+    echo "Ловкость - " . $this->warrioragility;
     echo '<br>';
-    echo "Сила - " . $strong=$height + $weight;
+    echo "Сила - " . $this->warriorstrong;
     echo '<br>';
     echo "Умения Богатыря:";
   }
-  public function Fighter($height, $weight, $strong) {
+  public function Fighter($height, $weight) {
+    $this->fighterweight=$weight;
+    $this->fighterheight=$height;
+    $this->fighterstrong=$this->fighterheight+$this->fighterweight;
+
     echo "Характеристики Бойца:";
     echo '<br>';
-    echo "Рост - " . $height;
+    echo "Рост - " . $this->fighterheight;
     echo '<br>';
-    echo "Вес - " . $weight;
+    echo "Вес - " . $this->fighterweight;
     echo '<br>';
-    echo "Сила - " . $strong=$height + $weight;
+    echo "Сила - " . $this->fighterstrong;
     echo '<br>';
     echo "Умения Бойца:";
   }
-  public function Wizard($height, $weight, $magic, $magicpower) {
+  public function Wizard($height, $weight, $magic) {
+    $this->wizardheight=$height;
+    $this->wizardweight=$weight;
+    $this->wizardmagic=$magic;
+    $this->wizardmagicpower=$this->wizardmagic*($this->wizardweight+$this->wizardweight);
+
     echo "Характеристики Колдуна:";
     echo '<br>';
     echo "Рост - " . $height;
     echo '<br>';
     echo "Вес - " . $weight;
     echo '<br>';
-    echo "Магическая сила - " . $magicpower=$magic * ($height + $weight);
+    echo "Магическая сила - " . $this->wizardmagicpower;
     echo '<br>';
     echo "Умения Колдуна:";
   }
@@ -206,7 +241,7 @@ public function Warrior($height, $weight, $agility, $strong) {
 echo '<hr style="background-color: red; border-color: red; height: 10px;">';
 
 $warrior = new characters;
-echo $warrior->Warrior(192, 123, 10, 0);
+echo $warrior->Warrior(192, 123, 10);
 echo '<br>';
 echo $warrior->Walk();
 echo '<br>';
@@ -234,7 +269,7 @@ echo '<br>';
 echo '<hr style="background-color: red; border-color: red; height: 10px;">';
 
 $wizard = new characters;
-echo $wizard->Wizard(187, 101, 15, 0);
+echo $wizard->Wizard(187, 101, 15);
 echo '<br>';
 echo $wizard->Walk();
 echo '<br>';
