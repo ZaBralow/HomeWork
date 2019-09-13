@@ -143,9 +143,6 @@ abstract class heroes {
   abstract public function Warrior($height, $weight, $agility);    
   abstract public function Fighter($height, $weight);
   abstract public function Wizard($height, $weight, $magic);
-
-
-  
 }
 
 
@@ -167,6 +164,24 @@ class characters extends heroes {
   public $wizardmagic;
   public $wizardmagicpower;
 
+  public function Walk() {
+    echo "Хожу";
+  }
+   public function Run() {
+    echo "Бегу";
+  }
+   public function Jump() {
+    echo "Прыгаю";
+  }
+   public function Fight_with_sword() {
+    echo "Дерусь с мечом";
+  }
+   public function Fly() {
+    echo "Летаю";
+  }
+   public function Destroy() {
+    echo "Уничтожаю";
+  }
 
 public function Warrior($height, $weight, $agility) {
     $this->warriorheight=$height;
@@ -216,24 +231,6 @@ public function Warrior($height, $weight, $agility) {
     echo "Магическая сила - " . $this->wizardmagicpower;
     echo '<br>';
     echo "Умения Колдуна:";
-  }
-   public function Walk() {
-    echo "Хожу";
-  }
-   public function Run() {
-    echo "Бегу";
-  }
-   public function Jump() {
-    echo "Прыгаю";
-  }
-   public function Fight_with_sword() {
-    echo "Дерусь с мечом";
-  }
-   public function Fly() {
-    echo "Летаю";
-  }
-   public function Destroy() {
-    echo "Уничтожаю";
   }
 }
 
